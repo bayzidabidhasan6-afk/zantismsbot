@@ -5,7 +5,7 @@ from config import ADMIN_ID
 from database import get_users
 
 
-def is_admin(user_id: int) -> bool:5432685680
+def is_admin(user_id: int) -> bool:
     return user_id == ADMIN_ID
 
 
@@ -31,7 +31,7 @@ async def admin_panel(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 
 async def total_users(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    if not is_admin(update.effective_user.id):5432685680
+    if not is_admin(update.effective_user.id):
         return
 
     users = get_users()
